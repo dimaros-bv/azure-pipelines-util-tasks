@@ -1,0 +1,36 @@
+{
+  "manifestVersion": 1,
+  "id": "azure-pipelines-util-tasks",
+  "version": "0.1.0",
+  "name": "Azure Pipelines Utility Tasks",
+  "publisher": "dimaros",
+  "description": "Custom tasks to simplify communication with azure",
+  "public": true,
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "categories": ["Azure Pipelines"],
+  "icons": {
+    "default": "images/dimaros-logo.png"
+  },
+  "files": [
+    {
+      "path": "Tasks"
+    }
+  ],
+  "content": {
+    "details": {
+      "path": "README.md"
+    },
+    "license": {
+      "path": "LICENSE.md"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/dimaros-bv/azure-pipelines-util-tasks"
+  },
+  "scopes": ["vso.serviceendpoint"]
+}

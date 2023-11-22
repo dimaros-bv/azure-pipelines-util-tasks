@@ -1,0 +1,58 @@
+{
+  "id": "62a1c826-bae2-4c53-bfdc-ad6ea5185d53",
+  "name": "AddAzSqlADUsers",
+  "friendlyName": "Add AD Users to Azure Sql Server",
+  "description": "Adds AD Users to databases with specific db roles",
+  "helpMarkDown": "[Learn more about this task](https://github.com/dimaros-bv/azure-pipelines-util-tasks/blob/main/Tasks/AddAzSqlADUsers/README.md)",
+  "helpUrl": "https://github.com/dimaros-bv/azure-pipelines-util-tasks/blob/main/Tasks/AddAzSqlADUsers/README.md",
+  "category": "Utility",
+  "author": "Dimaros B.V.",
+  "version": {
+    "Major": 0,
+    "Minor": 1,
+    "Patch": 0
+  },
+  "inputs": [
+    {
+      "name": "ConnectedServiceNameARM",
+      "aliases": ["azureSubscription"],
+      "type": "connectedService:AzureRM",
+      "label": "Azure Subscription",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Azure Resource Manager subscription to configure before running PowerShell"
+    },
+    {
+      "name": "ResourceGroup",
+      "type": "string",
+      "label": "Resource Group",
+      "required": true,
+      "helpMarkDown": "Resource group of Sql Server."
+    },
+    {
+      "name": "SqlServerName",
+      "type": "string",
+      "label": "Sql Server",
+      "required": true,
+      "helpMarkDown": "Sql Server name with AD authentication."
+    },
+    {
+      "name": "Users",
+      "type": "multiLine",
+      "label": "Users",
+      "required": true,
+      "helpMarkDown": "In format <database>|<user>|<comma separated db roles>.",
+      "properties": {
+        "resizable": "true",
+        "rows": "3",
+        "maxLength": "5000"
+      }
+    }
+  ],
+  "instanceNameFormat": "Add AD Users to $(SqlServerName)",
+  "execution": {
+    "PowerShell3": {
+      "target": "Run.ps1"
+    }
+  }
+}
