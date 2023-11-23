@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "azure-pipelines-util-tasks",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "name": "Azure Pipelines Utility Tasks",
   "publisher": "dimaros",
   "description": "Custom tasks to simplify communication with azure",
@@ -25,12 +25,22 @@
       "path": "README.md"
     },
     "license": {
-      "path": "LICENSE.md"
+      "path": "LICENSE"
     }
   },
   "repository": {
     "type": "git",
     "uri": "https://github.com/dimaros-bv/azure-pipelines-util-tasks"
   },
-  "scopes": ["vso.serviceendpoint"]
+  "scopes": ["vso.serviceendpoint"],
+  "contributions": [
+    {
+      "id": "azure-pipelines-util-tasks",
+      "type": "ms.vss-distributed-task.task",
+      "targets": ["ms.vss-distributed-task.tasks"],
+      "properties": {
+        "name": "Tasks/AddAzSqlADUsers"
+      }
+    }
+  ]
 }
